@@ -71,7 +71,7 @@ describe('USER Restful', function() {
       })
     })
 
-    describe('GET /users/create', function(){
+    describe('POST /users/', function(){
       it('should respond with json', function(done){
         request(app)
           .post('/users/')
@@ -81,6 +81,20 @@ describe('USER Restful', function() {
             console.log(res.body);
           })
           .expect(302, done);
+      })
+    })
+
+    describe('PUT /users/edit/:id', function(){
+      it('should respond with json', function(done){
+        request(app)
+          .put('/users/edit/537c52e244a44ecd42bb19f3')
+          .set('Accept', 'application/json')
+          .send({'name': 'Hello'})
+          .expect('Content-Type', 'application/json')
+          .expect(function(res) {
+            console.log(res.body);
+          })
+          .expect(200, done);
       })
     })
 

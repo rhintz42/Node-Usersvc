@@ -30,7 +30,7 @@ router.get('/:id', function(req, res) {
 });
 
 // Should be `router.put(...`
-router.get('/edit/:id', function(req, res) {
+router.put('/edit/:id', function(req, res) {
     userModel.User.find({_id: req.params.id}, function(err, data) {
         if(err)
             res.json('Error: ' + err);
