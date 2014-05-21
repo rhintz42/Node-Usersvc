@@ -22,7 +22,7 @@ exports.withServer = function(callback) {
     var app, appMod, stopServer;
 
     asyncSpecWait;
-    app = require("../../app");
+    app = require("../test-app");
 
     stopServer = function() {
         app.close();
