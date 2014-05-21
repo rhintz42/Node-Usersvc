@@ -13,7 +13,7 @@ describe('GET /user', function(){
     request(app)
       .get('/users')
       .set('Accept', 'application/json')
-      .expect('Content-Type', 'application/json')
+      .expect('Content-Type', /json/)
       .expect(200, done);
   })
 })
