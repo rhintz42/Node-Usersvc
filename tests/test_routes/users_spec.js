@@ -19,7 +19,7 @@ app.get('/users/cre', function(req, res){
   res.send(200, { _id: 1, username: 'cool' } );
 });
 */
-beforeAll(function() {
+beforeEach(function() {
     
     var mongo = require("mongodb");
 
@@ -32,7 +32,7 @@ beforeAll(function() {
     
 })
 
-afterAll(function() {
+afterEach(function() {
     //debugger;
     //var mongoose = app.mongoose;
     //var ex = app.exports;
@@ -71,18 +71,17 @@ describe('USER Restful', function() {
       })
     })
 
-    /*
-    describe('GET /users/cre', function(){
+    describe('GET /users/create', function(){
       it('should respond with json', function(done){
         request(app)
-          .get('/users/cre')
+          .post('/users/')
           .set('Accept', 'application/json')
-          .expect('Content-Type', 'application/json')
+          //.expect('Content-Type', 'application/json')
           .expect(function(res) {
             console.log(res.body);
           })
-          .expect(200, done);
+          .expect(302, done);
       })
     })
-    */
+
 })

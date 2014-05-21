@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
 });
 
 // Should be `router.post(...`
-router.get('/create', function(req, res) {
+router.post('/', function(req, res) {
     var user = userModel.User({username: 'cool', isPublic: true});
     user.save(function(err, data){
         if(err)
@@ -41,7 +41,7 @@ router.get('/edit/:id', function(req, res) {
 });
 
 // Should be `router.delete(...`
-router.get('/delete/:id', function(req, res) {
+router.delete('/delete/:id', function(req, res) {
     userModel.User.find({_id: req.params.id}).remove(function(err, data) {
         if(err)
             res.json('Error: ' + err);
